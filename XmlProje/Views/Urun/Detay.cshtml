@@ -1,0 +1,67 @@
+﻿@model XmlProje.Models.Urun
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ürün Detay</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <h2>Ürün Detay</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UrunAdi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UrunAdi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Fiyat)
+            </dd>
+         
+            <dt>
+                @Html.DisplayNameFor(model => model.Marka)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Marka)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Renk)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Renk)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Güncelle", "Guncelle", new { id = Model.ID }) |
+        @Html.ActionLink("Anasayfaya Dön", "Index")
+    </p>

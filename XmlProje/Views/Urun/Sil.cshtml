@@ -1,0 +1,76 @@
+﻿@model XmlProje.Models.Urun
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ürün Sil</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h3>Silmek istediğinize emin misiniz ?</h3>
+    <div>
+        <h2>Ürün Sil</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UrunAdi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UrunAdi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fiyat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Marka)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Marka)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Renk)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Renk)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-default" /> |
+                @Html.ActionLink("Anasayfaya Dön", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

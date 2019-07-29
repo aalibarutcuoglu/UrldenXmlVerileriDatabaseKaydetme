@@ -1,0 +1,78 @@
+﻿@model IEnumerable<XmlProje.Models.Stok>
+@using PagedList;
+@using PagedList.Mvc;
+
+
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ürün Listesi</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+   
+    <div class="container">
+        <h2>Stok Bilgisi</h2>
+        <table class="table table-responsive">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Label)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Kod)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ozellik)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrunID)
+                </th>
+
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Label)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kod)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ozellik)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UrunID)
+                    </td>
+
+                </tr>
+            }
+            <p>
+                @Html.ActionLink("Anasayfaya Dön", "Index")
+            </p>
+        </table>
+    </div>
+</body>
+</html>

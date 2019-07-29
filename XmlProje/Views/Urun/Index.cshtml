@@ -1,0 +1,101 @@
+﻿@model IEnumerable<XmlProje.Models.Urun>
+@using PagedList;
+@using PagedList.Mvc;
+
+
+
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ürün Listesi</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <style>
+        p {
+            position: fixed;
+            left: 700px;
+           
+        }
+    </style>
+
+    <div class="container">
+        <h2>Ürün Listesi</h2>
+        <table class="table table-responsive">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrunAdi)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Fiyat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Marka)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Renk)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UrunAdi)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fiyat)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marka)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Aciklama)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Renk)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Detay", "Detay", new { id = item.ID }) |
+                        @Html.ActionLink("Güncelle", "Guncelle", new { id = item.ID }) |
+                        @Html.ActionLink("Sil", "Sil", new { id = item.ID }) |
+                        @Html.ActionLink("Stoklar", "Stok", new { urunID = item.ID }) |
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <span style="text-align:center">@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))</span>
+        <p>
+            <input type="button" class="btn btn-info" value="Ürün Ekle" onclick="location.href='@Url.Action("Ekle", "Urun")'" />
+        </p>
+    </div>
+</body>
+</html>
