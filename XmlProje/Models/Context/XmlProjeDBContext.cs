@@ -10,7 +10,7 @@
         public XmlProjeDBContext()
             
         {
-            Database.Connection.ConnectionString = "Server=ALI;Database=XmlProje;UID=sa;PWD=ahmetali001996";
+            Database.Connection.ConnectionString = "Server=***;Database=***;UID=***;PWD=***";
         }
 
         public virtual DbSet<Kategori> Kategori { get; set; }

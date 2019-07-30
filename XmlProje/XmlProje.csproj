@@ -116,11 +116,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Kategori.cs" />
-    <Compile Include="Models\Stok.cs" />
-    <Compile Include="Models\sysdiagrams.cs" />
-    <Compile Include="Models\Urun.cs" />
-    <Compile Include="Models\XmlProjeDBContext.cs" />
+    <Compile Include="Models\Entities\Kategori.cs" />
+    <Compile Include="Models\Entities\Stok.cs" />
+    <Compile Include="Models\Entities\sysdiagrams.cs" />
+    <Compile Include="Models\Entities\Urun.cs" />
+    <Compile Include="Models\Context\XmlProjeDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
